@@ -1,23 +1,27 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private Ship ship;
-    [SerializeField] private Applicant applicantPrefab;
-    [SerializeField] private Applicant mostRecentApplicant;
+    [SerializeField] public Applicant applicantPrefab;
+    [SerializeField] public Applicant mostRecentApplicant;
 
-    // Start is called before the first frame update
-    void Start()
+    public GameObject crew;
+
+   
+    public List<Applicant> successfulApplicants = new List<Applicant>();
+
+
+    public void ButtonHit()
     {
-        mostRecentApplicant = Instantiate(applicantPrefab);
-        //ship.successfulApplicants.Add()
+        //mostRecentApplicant = Instantiate(applicantPrefab);
+        Instantiate(crew);
+        //ship.successfulApplicants.Add(mostRecentApplicant);
+        
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        // add to list code
-    }
 }

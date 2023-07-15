@@ -15,16 +15,18 @@ public class Applicant : MonoBehaviour
     private string[] humanHobbies = {"Basketball", "Coffee with mates", "Going to the beach", "Horror movies", "Gardening"};
 
     // Parasite hobbies
-    private string[] parasiteHobbies = {"Eating Cats", "Justin Bieber", "Smelling lungs", "Skinning lamas" };
+    private string[] parasiteHobbies = {"Eating Cats", "Justin Bieber", "Smelling lungs", "Watching Days of Our Lives" };
 
     // Human names
     private string[] names = {"Malini", "Mani", "Kavita", "Sangeeta", "Mavesh", "Malaria", "Tape", "Flea", "Tick" };
+
 
 
     // Update is called once per frame
     void Start()
     {
         GenerateInfo();
+        string[] textArray = { "test1", "test2", "test3" };
     }
 
     public void GenerateInfo()
@@ -39,56 +41,45 @@ public class Applicant : MonoBehaviour
         {
             GenerateHumanHobby();
         }
+        Debug.Log("My name is " + crewMateName + ", my hobby is " + hobby + ". ");
     }
 
     private void GenerateName()
     {
         crewMateName = names[rnd.Next(0, 9)];
-        Debug.Log(crewMateName);
+        //Debug.Log(crewMateName);
     }
     private void GenerateHumanHobby()
     {
         hobby = humanHobbies[rnd.Next(0, 5)];
-        Debug.Log(hobby);
+        //Debug.Log(hobby);
     }
 
     private void GenerateisParasiteHobby()
     {
         hobby = parasiteHobbies[rnd.Next(0, 4)];
-        Debug.Log(hobby);
+        //Debug.Log(hobby);
     }
     private void GenerateIsParasite()
     {
         isParasite = Random.value < 0.25f;
     }
+    
 
-
-    // youtubed the below but did not fully understand how it worked
-    //static void Main(string[] args)
-    //{
-    //    int[] applicant = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
-    //    Applicant[1] = applicant[1];
-    //    Applicant[2] = applicant[2];
-    //    Applicant[3] = applicant[3];
-    //    Applicant[4] = applicant[4];
-    //    Applicant[5] = applicant[5];
-    //    Applicant[6] = applicant[6];
-    //    Applicant[7] = applicant[7];
-    //    Applicant[8] = applicant[8];
-    //    Applicant[9] = applicant[9];
-    //    Applicant[10] = applicant[10];
-    //    Applicant[11] = Applicant[11];
-
-    //    for (int i = 0;.....
-
+   
     //Generate a name (use random), make a function for this
     //Generate if its an alien, 
     //Generate a hobby (same thing)
 
 
-   
 
 
+
+
+
+    /////NEXT STEPS: Figure out the hire button
+    ///// LIST
+    /// Killer Parasite
 
 
 

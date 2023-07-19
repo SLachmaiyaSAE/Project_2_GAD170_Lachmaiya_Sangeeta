@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.TextCore.Text;
 using UnityEngine;
+using TMPro;
 
 public class Applicant : MonoBehaviour
 {
     [SerializeField] private string hobby;
     [SerializeField] public string crewMateName;
     [SerializeField] private bool isParasite;
+    [SerializeField] private TextMeshProUGUI messageLabel;
+    [SerializeField] private UITextUpdater uiTextUpdater;
 
     private System.Random rnd = new System.Random();
 
@@ -26,7 +29,6 @@ public class Applicant : MonoBehaviour
     void Start()
     {
         GenerateInfo();
-        string[] textArray = { "test1", "test2", "test3" };
     }
 
     public void GenerateInfo()
@@ -42,6 +44,7 @@ public class Applicant : MonoBehaviour
             GenerateHumanHobby();
         }
         Debug.Log("My name is " + crewMateName + ", my hobby is " + hobby + ". ");
+        uiTextUpdater.UpdateText("My name is " + crewMateName + ", my hobby is " + hobby + ". ");
     }
 
     private void GenerateName()
@@ -64,9 +67,14 @@ public class Applicant : MonoBehaviour
     {
         isParasite = Random.value < 0.25f;
     }
-    
 
-   
+
+
+    private void Update()
+    {
+    
+    }
+
     //Generate a name (use random), make a function for this
     //Generate if its an alien, 
     //Generate a hobby (same thing)

@@ -7,19 +7,16 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private Ship ship;
-    [SerializeField] public Applicant applicantPrefab;
-    [SerializeField] public Applicant mostRecentApplicant;
+    [SerializeField] public GameObject applicantPrefab;
+    [SerializeField] public GameObject mostRecentApplicant;
 
-    public GameObject crew;
-
-   
     public List<Applicant> successfulApplicants = new List<Applicant>();
 
 
     public void ButtonHit()
     {
         //mostRecentApplicant = Instantiate(applicantPrefab);
-        Instantiate(crew);
+        Instantiate(applicantPrefab);
         //ship.successfulApplicants.Add(mostRecentApplicant);
         
     }

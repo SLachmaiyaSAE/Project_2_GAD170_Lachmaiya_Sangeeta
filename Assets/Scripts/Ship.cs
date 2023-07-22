@@ -4,17 +4,50 @@ using UnityEngine;
 
 public class Ship : MonoBehaviour
 {
+    // Create the list for successful applicants that are hired
     public List<Applicant> successfulApplicants = new List<Applicant>();
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    // declaring my game object to instantiate
+    public GameObject Applicant;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ClonePrefab();
+        }
     }
+
+    void ClonePrefab()
+    {
+        if(Applicant == null)
+        {
+            Vector3 spawnPosition = transform.position;
+            Quaternion spawnRotation = transform.rotation;
+            GameObject clone = Instantiate(Applicant, spawnPosition, spawnRotation);
+          
+        }
+    }
+
+
+
+
+
+
+
+
+    //private Applicant applicant;
+
+
+    //// Update is called once per frame
+    //public void AddGameObjectToList()
+    //{
+    //    Applicant instantiatedObject = Instantiate(prefab);
+    //    successfulApplicants.Add(applicant);
+    //}
+
+
+
+
+
 }
